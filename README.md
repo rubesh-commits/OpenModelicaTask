@@ -40,7 +40,7 @@ pip install PyQt6
 
 ```bash
 python3 -m venv venv
-source venv/bin/activate      # on Windows: venv\Scripts\activate
+source venv/bin/activate    
 pip install PyQt6
 ```
 
