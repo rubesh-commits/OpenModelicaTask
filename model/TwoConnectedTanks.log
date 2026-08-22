@@ -1,0 +1,26 @@
+<p>/home/rubesh/OpenModelica/NonInteractingTanks.TwoConnectedTanks/TwoConnectedTanks -port=37949 -logFormat=xmltcp -startTime=0 -stopTime=5 -stepSize=0.01 -tolerance=1e-06 -s=dassl -outputFormat=mat -variableFilter=.* -r=/home/rubesh/OpenModelica/NonInteractingTanks.TwoConnectedTanks/TwoConnectedTanks_res.mat -w -lv=LOG_STDOUT,LOG_ASSERT,LOG_STATS -inputPath=/home/rubesh/OpenModelica/NonInteractingTanks.TwoConnectedTanks -outputPath=/home/rubesh/OpenModelica/NonInteractingTanks.TwoConnectedTanks</p>
+LOG_SUCCESS		| info	 | <p>The initialization finished successfully without homotopy method.</p>
+LOG_STATS		| info	 | <p>### STATISTICS ###</p>
+|		| |	 | | <p>timer</p>
+|		| |	 | | | <p>   0.0389079s          reading init.xml</p>
+|		| |	 | | | <p> 0.000459051s          reading info.xml</p>
+|		| |	 | | | <p> 0.000549211s [  4.4%] pre-initialization</p>
+|		| |	 | | | <p> 0.000223623s [  1.8%] initialization</p>
+|		| |	 | | | <p>  1.1172e-05s [  0.1%] steps</p>
+|		| |	 | | | <p> 0.000907368s [  7.3%] solver (excl. callbacks)</p>
+|		| |	 | | | <p> 0.000994556s [  8.0%] creating output-file</p>
+|		| |	 | | | <p> 0.000526418s [  4.2%] event-handling</p>
+|		| |	 | | | <p> 0.000394896s [  3.2%] overhead</p>
+|		| |	 | | | <p>  0.00881575s [ 71.0%] simulation</p>
+|		| |	 | | | <p>    0.012423s [100.0%] total</p>
+|		| |	 | | <p>events</p>
+|		| |	 | | | <p>    0 state events</p>
+|		| |	 | | | <p>    0 time events</p>
+|		| |	 | | <p>solver: dassl</p>
+|		| |	 | | | <p>   24 steps taken</p>
+|		| |	 | | | <p>   24 calls of functionODE</p>
+|		| |	 | | | <p>   23 evaluations of jacobian</p>
+|		| |	 | | | <p>    0 error test failures</p>
+|		| |	 | | | <p>    0 convergence test failures</p>
+|		| |	 | | | <p>3.7026e-05s time of jacobian evaluation</p>
+LOG_SUCCESS		| info	 | <p>The simulation finished successfully.</p>

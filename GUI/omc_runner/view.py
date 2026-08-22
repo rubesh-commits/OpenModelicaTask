@@ -1,11 +1,3 @@
-"""
-View layer.
-
-MainWindow builds and lays out every widget and exposes them as plain
-attributes. It contains no business logic - the Controller wires up
-behavior separately.
-"""
-
 from PyQt6.QtGui import QIntValidator, QFont
 from PyQt6.QtWidgets import (
     QWidget,
@@ -22,8 +14,6 @@ from PyQt6.QtWidgets import (
 
 
 class MainWindow(QWidget):
-    """Pure View class: builds widgets only, no business logic."""
-
     def __init__(self):
         super().__init__()
         self.setWindowTitle("OpenModelica Model Runner")
@@ -44,8 +34,6 @@ class MainWindow(QWidget):
 
         output_group = self._build_output_group()
         root_layout.addWidget(output_group, stretch=1)
-
-    # --- Section builders ---------------------------------------------
 
     def _build_header(self) -> QWidget:
         header = QWidget()
@@ -73,8 +61,7 @@ class MainWindow(QWidget):
         input_group = QGroupBox("Simulation Settings")
         form_layout = QFormLayout()
         form_layout.setSpacing(10)
-
-        # Executable picker (input 1)
+        
         exe_row = QHBoxLayout()
         self.executable_edit = QLineEdit()
         self.executable_edit.setPlaceholderText("Path to OpenModelica executable...")
@@ -85,13 +72,11 @@ class MainWindow(QWidget):
         exe_row_widget.setLayout(exe_row)
         form_layout.addRow("Executable:", exe_row_widget)
 
-        # Start time (input 2) - integer only
         self.start_time_edit = QLineEdit()
         self.start_time_edit.setPlaceholderText("e.g. 0")
         self.start_time_edit.setValidator(QIntValidator(-2_147_483_648, 2_147_483_647))
         form_layout.addRow("Start time:", self.start_time_edit)
 
-        # Stop time (input 3) - integer only
         self.stop_time_edit = QLineEdit()
         self.stop_time_edit.setPlaceholderText("e.g. 10")
         self.stop_time_edit.setValidator(QIntValidator(-2_147_483_648, 2_147_483_647))
@@ -132,8 +117,6 @@ class MainWindow(QWidget):
         output_layout.addWidget(self.output_console)
         output_group.setLayout(output_layout)
         return output_group
-
-    # --- Small helper methods the Controller can call ------------------
 
     def set_running_state(self, running: bool):
         self.run_button.setEnabled(not running)
