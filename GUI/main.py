@@ -1,10 +1,3 @@
-"""
-Entry point for the OpenModelica Model Runner app.
-
-Run with:
-    python main.py
-"""
-
 import sys
 
 from PyQt6.QtWidgets import QApplication
@@ -17,7 +10,7 @@ def main():
     app = QApplication(sys.argv)
 
     window = MainWindow()
-    controller = AppController(window)  # noqa: F841 - keeps controller alive
+    controller = AppController(window) 
 
     window.resize(640, 560)
     window.show()
