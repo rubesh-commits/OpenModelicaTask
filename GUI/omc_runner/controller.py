@@ -1,11 +1,3 @@
-"""
-Controller layer.
-
-AppController is the only class that knows about both the View and the
-Model/worker. It connects View signals (button clicks) to Model actions
-and feeds results (output, status, errors) back into the View.
-"""
-
 import os
 
 from PyQt6.QtWidgets import QFileDialog, QMessageBox
@@ -16,16 +8,12 @@ from .worker import SimulationWorker
 
 
 class AppController:
-    """Connects the View's signals to Model actions."""
-
     def __init__(self, view: MainWindow):
         self.view = view
         self.worker: SimulationWorker | None = None
 
         self.view.browse_button.clicked.connect(self.on_browse_clicked)
         self.view.run_button.clicked.connect(self.on_run_clicked)
-
-    # --- Event handlers -------------------------------------------------
 
     def on_browse_clicked(self):
         path, _ = QFileDialog.getOpenFileName(
@@ -67,10 +55,7 @@ class AppController:
         self.view.append_output(f"[ERROR] {message}")
         self._show_error(message)
 
-    # --- Helpers ----------------------------------------------------------
-
     def _read_config_from_view(self) -> ModelConfig | None:
-        """Read and type-check the raw form input; show a dialog on failure."""
         exe_path = self.view.executable_edit.text().strip()
         start_text = self.view.start_time_edit.text().strip()
         stop_text = self.view.stop_time_edit.text().strip()
