@@ -68,7 +68,7 @@ The GUI window will open.
      ```
 2. **Start time** — enter a whole number (e.g. `0`).
 3. **Stop time** — enter a whole number greater than the start time
-   (e.g. `10`).
+   (e.g. `5`).
 4. Click **Run Simulation**.
    - Inputs are validated before anything runs — you'll get a clear popup
      if the executable is missing, not executable, or the times are
